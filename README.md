@@ -97,3 +97,11 @@ docker stop unity_compressed_container && docker rm unity_compressed_container
 
 - Проект собирается через CLI со сжатием Gzip, образ `platformer-compressed:v1` локально протестирован — игра запускается, сжатые файлы отдаются с корректными заголовками.
 - Пайплайн GitHub Actions собирает и публикует Docker-образ в GHCR: `ghcr.io/temmie4real/platformer-game:latest`.
+
+Прогон пайплайна после влития PR — обе задачи зеленые (`sanity_check` → `build_docker_image`):
+
+![Зеленый прогон пайплайна](docs/03-actions-run-success.png)
+
+Отчет по лабораторной работе размещен в README основного репозитория:
+
+![Страница репозитория arpolab3](docs/04-repo-page.png)
