@@ -83,6 +83,10 @@ Content-Encoding: gzip
 
 Все три файла отдаются с кодом 200 и заголовком `Content-Encoding: gzip` — именно этого добивалась конфигурация Nginx.
 
+Проверил заголовки и в панели DevTools браузера (F12 → Network → Ctrl+F5): у файла `WebGL.wasm.gz` в Response Headers присутствует `Content-Encoding: gzip`, тип контента — `application/wasm`, сервер — `nginx/1.31.8`:
+
+![DevTools: заголовок Content-Encoding: gzip у WebGL.wasm.gz](docs/05-devtools-content-encoding-gzip.png)
+
 Остановил тестовый контейнер:
 
 ```
@@ -105,3 +109,7 @@ docker stop unity_compressed_container && docker rm unity_compressed_container
 Отчет по лабораторной работе размещен в README основного репозитория:
 
 ![Страница репозитория arpolab3](docs/04-repo-page.png)
+
+Готовый образ во вкладке Packages профиля GitHub — пакет `platformer-game` опубликован в GHCR, привязан к репозиторию arpolab3 и сделан публичным (образ может скачать любой командой `docker pull ghcr.io/temmie4real/platformer-game:latest`):
+
+![GHCR-пакет platformer-game](docs/06-ghcr-package-public.png)
